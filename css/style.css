@@ -1,0 +1,239 @@
+/* General Rules */
+* {
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h3,
+p {
+    margin: 0;
+}
+
+/* All Buttons */
+.btn {
+    padding: 0.7em 1.5em;
+    border-radius: 7px;
+    border: 0;
+    cursor: pointer;
+}
+
+/* Main Container */
+.container {
+    margin: 0 auto;
+    height: 100vh;
+    min-width: 300px;
+    max-width: 600px;
+    display: grid;
+    grid-template-rows: 20% repeat(4, max-content);
+    grid-template-areas:
+        "header header header"
+        "task-btn task-btn task-btn"
+        "tasks tasks tasks"
+        "notes notes total"
+        "print-btn print-btn print-btn";
+    gap: 2em 0;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2b283a;
+    background-color: #f5f5f5;
+}
+
+header .title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.2em;
+}
+
+header .subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Tasks Buttons */
+.tasks-btns-container {
+    grid-area: task-btn;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1.5rem;
+}
+
+.task-btn {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1em;
+    border: 1px solid #d5d4d8;
+    color: #4a4e74;
+    background-color: #ffffff;
+}
+
+.task-btn:focus,
+.task-btn:hover {
+    border: 1px solid #4a4e74;
+}
+
+/* Tasks Section & Notes Div, Total Amount Div */
+.tasks .title,
+.notes .title,
+.total-amount .title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #918e9b;
+}
+
+/* Tasks section */
+.tasks {
+    grid-area: tasks;
+    margin: 0 1.5rem;
+    border-bottom: 1px solid #c3c6db;
+}
+
+.tasks .titles,
+.tasks .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasks .titles {
+    margin-bottom: 1rem;
+}
+
+.tasks .item {
+    margin-bottom: 1.5rem;
+}
+
+.tasks .item:last-child {
+    margin-bottom: 2rem;
+}
+
+.item-name {
+    font-size: 1.245rem;
+    font-weight: 700;
+    color: #4a4e74;
+}
+
+.remove-btn {
+    font-size: 0.5rem;
+    font-weight: 400;
+    margin-left: 2em;
+    color: #918e9b;
+    cursor: pointer;
+}
+
+.item-name + p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #918e9b;
+}
+
+.item-price {
+    color: #4a4e74;
+    font-weight: 500;
+}
+
+/* Notes Div */
+.notes {
+    grid-area: notes;
+    margin-left: 1.5rem;
+}
+
+.notes-subtitle {
+    font-size: 0.75rem;
+    margin-top: 1rem;
+    color: #4a4e74;
+}
+
+/* Total Amount Div */
+.total-amount {
+    grid-area: total;
+    margin-right: 1.5rem;
+    text-align: right;
+}
+
+#tasks-total {
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    color: #918e9b;
+}
+
+#tasks-total.dark-num {
+    color: #4a4e74;
+}
+
+/* Print Button */
+#print-btn {
+    font-size: 1rem;
+    font-weight: 500;
+    grid-area: print-btn;
+    align-self: start;
+    color: #ffffff;
+    background-color: #3770ed;
+    margin: 0 1.5rem;
+}
+
+#print-btn > img {
+    margin-right: 1em;
+}
+
+/* Automated Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .container {
+        background-color: #1f2937;
+    }
+
+    header {
+        color: #ffffff;
+        background-color: #3a69d2;
+    }
+
+    .task-btn {
+        background-color: #d1d4f4;
+    }
+
+    .task-btn:focus,
+    .task-btn:hover {
+        border: 1px solid #ffffff;
+    }
+
+    .tasks .title,
+    .notes .title,
+    .total-amount .title,
+    .remove-btn {
+        color: #d5d4d8;
+    }
+
+    .tasks .item {
+        color: #918e9b;
+    }
+
+    .item-name,
+    .item-price,
+    #tasks-total,
+    .notes-subtitle,
+    #tasks-total.dark-num {
+        color: #f5f5f5;
+    }
+}
+
+@media (min-width: 500px) {
+    .tasks-btns-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .task-btn {
+        margin-bottom: 0;
+    }
+}
