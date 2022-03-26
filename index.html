@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Invoice Creator</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1 class="title">Invoice creator</h1>
+                <p class="subtitle">Thanks for choosing GoodCorp, LLC!</p>
+            </header>
+
+            <section class="tasks-btns-container">
+                <button class="task-btn btn">Wash Car: $10</button>
+                <button class="task-btn btn">Mow Lawn: $20</button>
+                <button class="task-btn btn">Pull Weeds: $30</button>
+            </section>
+
+            <section class="tasks">
+                <div class="titles">
+                    <h3 class="title">Task</h3>
+                    <h3 class="title">Total</h3>
+                </div>
+            </section>
+
+            <div class="notes">
+                <h3 class="title">Notes</h3>
+                <p class="notes-subtitle"></p>
+            </div>
+
+            <div class="total-amount">
+                <h3 class="title">Total amount</h3>
+                <p id="tasks-total">$0</p>
+            </div>
+
+            <button id="print-btn" class="btn">
+                <img src="img/email-icon.png" />
+                Print invoice
+            </button>
+        </div>
+
+        <!-- Script -->
+        <script src="main.js"></script>
+    </body>
+</html>
